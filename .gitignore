@@ -2,3 +2,5 @@
 /.gradle/
 .gradle
 .idea
+
+application-oauth-properties

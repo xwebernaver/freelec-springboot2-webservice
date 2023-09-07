@@ -36,6 +36,21 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
 
+    //gradle 이 버전 4 라면
+    //implementation 'org.projectlombok:lombok'
+
+    //gradle 이 버전 5 라면
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation('com.h2database:h2')
+
+    implementation('org.springframework.boot:spring-boot-starter-mustache')
+
+
+
+
     // 프로젝트 생성시 자동 생성됨
     //testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     //testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
