@@ -54,6 +54,7 @@ dependencies {
 
     implementation('org.springframework.security:spring-security-test')
 
+    implementation('org.maridb.jdbc:mariadb-java-client')
 
 
     // 프로젝트 생성시 자동 생성됨
