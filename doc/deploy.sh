@@ -40,6 +40,12 @@ JAR_NAME=$(ls -tr $REPOSITORY/ | grep jar | tail -n 1)
 
 echo "> JAR Name: $JAR_NAME"
 
+#nohup java -jar $REPOSITORY/$JAR_NAME 2>&1 &
 #nohup java -jar \ -Dspring.config.location=classpath:/application.properties,/home/ec2-user/app/application-oauth.properties \ $REPOSITORY/$JAR_NAME 2>&1 &
 #nohup java -jar \ -Dspring.config.location=classpath:/application.properties,/home/ec2-user/app/application-oauth.properties \ $JAR_NAME > $REPOSITORY/$JAR_NAME 2>&1 &
-nohup java -jar -Dspring.config.location=classpah:/application.properties,/home/ec2-user/app/application-oauth.properties $REPOSITORY/$JAR_NAME &
+#nohup java -jar -Dspring.config.location=classpah:/application.properties,/home/ec2-user/app/application-oauth.properties $REPOSITORY/$JAR_NAME &
+
+#아래 명령어에서 "classpah:/application.properties"  이부분은 필요 없음. 어차피 real 프로필을 사용하기 때문.
+#nohup java -jar -Dspring.config.location=classpah:/application.properties,/home/ec2-user/app/application-oauth.properties,/home/ec2-user/app/application-real-db.properties,classpath:/application-real.properties -Dspring.profiles.active=real $REPOSITORY/$JAR_NAME &
+
+nohup java -jar -Dspring.config.location=/home/ec2-user/app/application-oauth.properties,/home/ec2-user/app/application-real-db.properties,classpath:/application-real.properties -Dspring.profiles.active=real $REPOSITORY/$JAR_NAME &
